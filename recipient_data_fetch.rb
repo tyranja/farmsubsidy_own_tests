@@ -1,8 +1,6 @@
 require 'csv'
-require 'bigdecimal'
-require 'json'
-require "rubygems"
-require "sequel"
+require 'rubygems'
+require 'sequel'
 
 
 # connect to an in-memory database
