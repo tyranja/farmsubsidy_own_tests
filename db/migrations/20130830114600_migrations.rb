@@ -24,7 +24,7 @@ Sequel.migration do
       primary_key :id
       String :global_recipient_id, :null=>false
       String :name
-      String :zipcode, :null=>false
+      String :zipcode
       foreign_key(:secondary_admin_area_id, :secondary_admin_areas)
     end
 
