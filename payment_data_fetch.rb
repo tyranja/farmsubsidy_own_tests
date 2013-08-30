@@ -7,10 +7,10 @@ require 'sequel'
 DB = Sequel.postgres("farmsubsidy_development")
 
 
-# create a dataset from the payments data
+# create a dataset from the payments table
 payment = DB[:payments]
 
-#create a dataset from the years data
+#create a dataset from the years table
 years = DB[:years]
 
 #create a dataset from the recipients table
@@ -21,7 +21,7 @@ payment_txt = CSV.open("data/cz_payment.txt", "r:UTF-8", :headers => true, :col_
   csv.each do |row|
       print "." if i%100 == 0
 
-      # # # find the year_id by searching years dataset
+      # find the year_id by searching years dataset
       year_id = years.where(:year=>row['year']).all
 
       # find the recipient_id by searching recipient dataset
