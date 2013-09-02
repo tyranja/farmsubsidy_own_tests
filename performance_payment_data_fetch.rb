@@ -14,7 +14,7 @@ payment = DB[:payments]
 #create a dataset from the years table
 years = DB[:years]
 
-# fetch the data from DB years and create an array
+# fetch the data from DB years and create an hash
 # years.all = [{:id=>1, :year=>2000}, {:id=>2, :year=>2001}, ...]
  # {2001 => 2, 2002 => 3, 2003 => 4}
 years_hash = {}
