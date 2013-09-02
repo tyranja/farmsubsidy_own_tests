@@ -10,9 +10,10 @@ namespace :db do
     require "sequel"
     Sequel.extension :migration
     
-    #check to see if performance DB already exists.
-    if system("locatedb farmsubsidy_performance")
-		  #if it does then drop the db 
+    #check to see if performance DB already exists
+    the_database_is_there = system("psql -l | grep farmsubsidy_performance")
+    if the_database_is_there
+      #if it does then drop the db 
 		  system("dropdb farmsubsidy_performance")
 		end
     #and recreate it
