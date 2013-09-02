@@ -18,8 +18,8 @@ years = DB[:years]
 # years.all = [{:id=>1, :year=>2000}, {:id=>2, :year=>2001}, ...]
  # {2001 => 2, 2002 => 3, 2003 => 4}
 years_hash = {}
-years.all.each do |year_hash|
-  years_hash[year_hash[:year].to_s] = year_hash[:id]
+years.all.each do |row|
+  years_hash[row[:year].to_s] = row[:id]
 end
 
 #create a dataset from the recipients table
