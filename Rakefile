@@ -9,13 +9,13 @@ namespace :db do
   task :set_up_performance_test_db do
     require "sequel"
     Sequel.extension :migration
-    
+
     #check to see if performance DB already exists
     the_database_is_there = system("psql -l | grep farmsubsidy_performance")
     if the_database_is_there
       #if it does then drop the db 
-		  system("dropdb farmsubsidy_performance")
-		end
+      system("dropdb farmsubsidy_performance")
+    end
     #and recreate it
     system("createdb farmsubsidy_performance")
 

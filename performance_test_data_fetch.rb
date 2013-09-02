@@ -2,6 +2,7 @@ require 'csv'
 require 'rubygems'
 require 'sequel'
 
+beginning = Time.now
 
 MAXIMUMROWS = 50000
 # connect to an in-memory database
@@ -36,3 +37,5 @@ payment_txt = CSV.open("data/cz_payment.txt", "r:UTF-8", :headers => true, :col_
     break if i > MAXIMUMROWS #(check for break in ruby)
   end
 end
+
+puts "Time elapsed #{Time.now - beginning} seconds"
