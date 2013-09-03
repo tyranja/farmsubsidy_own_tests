@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Top Payments</title>
+    <script type="text/javascript" src="../d3/d3.v3.js"></script>
+    <style type="text/css">
+       div.bar {
+              display: inline-block;
+              width: 20px;
+              height: 75px; /* Gets overriden by D3-assigned height below */
+              margin-right: 2px;
+              background-color: teal;
+            }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      //Width and height
+      var w = 800;
+      var h = 600;
+
+      //Create SVG element
+      var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+/*      d3.csv("top_payments.csv", function(data) {
+        var dataset = data
+      });
+*/
+    d3.csv("top_payments.csv", function(data){
+      d3.select("body").selectAll("div")
+        .data(data)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        .style("height", function(d){
+          var barHeight = d[0] / 10000;
+          return barHeight + "px";
+        });
+        // console.log(data);
+      });
+    </script>
+  </body>
+</html>

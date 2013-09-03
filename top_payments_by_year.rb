@@ -28,8 +28,16 @@ payments_sorted.each_with_index do |payment, index|
 	top_payments << {rank: index+1, name: recipient_name, amount: payment[:amount_euro]}
 end
 
+# [{:rank=>1, :name=>"Zemědělsko-obchodní družstvo Žichlínek", :amount=>#<BigDecimal:2cf64b0,'0.62048908E6',18(18)>}, {..}
 p top_payments
 
-
+CSV.open("top_payments.csv", "w", :force_quotes => true) do |csv|
+  i = 0
+  csv << ["rank","name","amount"]
+  while i < top_payments.length
+    csv << [top_payments[i][:rank],top_payments[i][:name],top_payments[i][:amount].to_i]
+    i += 1
+  end
+end
 
 
