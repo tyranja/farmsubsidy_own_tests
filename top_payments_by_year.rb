@@ -19,8 +19,6 @@ p payments_sorted.all.count
 
 payments_sorted.each do |hash|
 	p hash[:recipient_id]
-	# hash_id = hash[:recipent_id]
-	# p hash_id
 	recipient_name = DB.fetch("SELECT name FROM recipients WHERE id='#{hash[:recipient_id]}'").first[:name]
 	p recipient_name
 end
