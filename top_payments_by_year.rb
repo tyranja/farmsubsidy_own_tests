@@ -14,5 +14,15 @@ year_id = DB.fetch("SELECT id FROM years WHERE year='#{year_selection}'").first[
 p year_id
 
 payments_sorted = DB.fetch("SELECT * FROM payments WHERE year_id='#{year_id}' ORDER BY amount_euro DESC LIMIT 20")
+p payments_sorted.first
 p payments_sorted.all.count
+
+payments_sorted.each do |hash|
+	p hash[:recipient_id]
+	# hash_id = hash[:recipent_id]
+	# p hash_id
+	recipient_name = DB.fetch("SELECT name FROM recipients WHERE id='#{hash[:recipient_id]}'").first[:name]
+	p recipient_name
+end
+
 
