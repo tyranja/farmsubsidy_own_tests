@@ -3,15 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Top Payments</title>
-    <script type="text/javascript" src="../d3/d3.v3.js"></script>
+    <script type="text/javascript" src="d3/d3.v3.js"></script>
     <style type="text/css">
-        .chart div {
-          font: 14px sans-serif;
-          text-align: right;
-          padding: 5px;
-          margin: 10px;
-          color: white;
-          height: 40px;
+      .chart rect {
+        stroke: white;
+        /*fill: steelblue;*/
       }
 
     </style>
@@ -22,23 +18,30 @@
     var color = d3.scale.quantize()
       .range(["rgb(173,221,142)","rgb(120,198,121)","rgb(65,171,93)","rgb(35,132,67)","rgb(0,104,55)","rgb(0,69,41)"]);
 
-    var chart = d3.select("body").append("div")
-      .attr("class", "chart");
 
     d3.csv("top_payments.csv", function(data){
+
+      var chart = d3.select("body").append("svg")
+        .attr("class", "chart")
+        .attr("width", 420)
+        .attr("length", 20 * data.length);
+
+      var x = d3.scale.linear()
+        .domain([0, d3.max(data, function(d){ return d.amount })])
+        .range([0, 420]);
 
       color.domain([
         d3.min(data, function(d){ return d.amount }),
         d3.max(data, function(d){ return d.amount })
-        ])
+        ]);
 
-      chart.selectAll("div")
+      chart.selectAll("rect")
         .data(data)
-        .enter().append("div")
-        .style("width", function(d) { return d.amount * 0.0010 + "px"; })
-        .style("width", function(d) { return d.amount * 0.0010 + "px"; })
-        .html(function(d) { return d.name + "</br> payment: " + d.amount + " Euro"; })
-        .style("background-color", function(d) {
+        .enter().append("rect")
+        .attr("y", function(d, i) { return i * 20; })
+        .attr("width", function(d) { return x(d.amount) })
+        .attr("height", 20 )
+        .attr("fill", function(d) {
         //Get data value
           var value = d.amount;
             if (value) {
@@ -46,7 +49,7 @@
               return color(value);
             } else {
               //If value is undefined…
-              return "#ccc";
+              return "#fff";
             };
           });
       });
