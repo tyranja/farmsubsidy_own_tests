@@ -39,7 +39,7 @@ CSV.open("top_payments.csv", "w", :force_quotes => true) do |csv|
   end
 end
 
-payments_sorted.all.first.methods.sort.each do |method_name|
+payments_sorted.all.first.values.methods.sort.each do |method_name|
   p method_name
 end
 
