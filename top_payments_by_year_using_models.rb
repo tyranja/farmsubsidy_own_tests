@@ -50,9 +50,8 @@ p payments_sorted.first
 
 p payments_sorted.first.recipient_id
 
-payments_sorted.Payment[:newKey] = "newValue"
-
-p payments_sorted.first
+p payments_sorted.first.columns
+p payments_sorted.first.values.merge({:newKey => "newValue"})
 
 
 
