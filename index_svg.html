@@ -7,7 +7,6 @@
     <style type="text/css">
       .chart rect {
         stroke: white;
-        /*fill: steelblue;*/
       }
 
     </style>
@@ -18,10 +17,13 @@
     var color = d3.scale.quantize()
       .range(["rgb(173,221,142)","rgb(120,198,121)","rgb(65,171,93)","rgb(35,132,67)","rgb(0,104,55)","rgb(0,69,41)"]);
 
-
     d3.csv("top_payments.csv", function(data){
-
-      var chart = d3.select("body").append("svg")
+      var svg = d3.select("body")
+        .append("svg")
+        .attr("width", window.innerWidth)
+        .attr("height",window.innerHeight);
+        
+      var chart = d3.select("svg")
         .attr("class", "chart")
         .attr("width", 420)
         .attr("length", 20 * data.length);
