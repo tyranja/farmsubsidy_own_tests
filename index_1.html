@@ -40,15 +40,15 @@
         .html(function(d) { return d.name + "</br> payment: " + d.amount + " Euro"; })
         .style("background-color", function(d) {
         //Get data value
-          var value = d.amount;
-            if (value) {
-              //If value exists…
-              return color(value);
-            } else {
-              //If value is undefined…
-              return "#ccc";
-            };
-          });
+        var value = d.amount;
+          if (value) {
+            //If value exists…
+            return color(value);
+          } else {
+            //If value is undefined…
+            return "#ccc";
+          };
+        });
       });
     </script>
   </body>
