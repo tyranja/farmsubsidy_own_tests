@@ -53,5 +53,10 @@ p payments_sorted.first.recipient_id
 p payments_sorted.first.columns
 p payments_sorted.first.values.merge({:newKey => "newValue"})
 
+# payments_sorted.insert(:amount_euro=>"5")
+payments_sorted.update(:amount_euro=>"6")
+
+p payments_sorted.first
+
 
 
