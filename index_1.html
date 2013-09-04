@@ -17,6 +17,7 @@
     </style>
   </head>
   <body>
+
     <script type="text/javascript">
 
     var color = d3.scale.quantize()
@@ -35,7 +36,6 @@
       chart.selectAll("div")
         .data(data)
         .enter().append("div")
-        .style("width", function(d) { return d.amount * 0.0010 + "px"; })
         .style("width", function(d) { return d.amount * 0.0010 + "px"; })
         .html(function(d) { return d.name + "</br> payment: " + d.amount + " Euro"; })
         .style("background-color", function(d) {
