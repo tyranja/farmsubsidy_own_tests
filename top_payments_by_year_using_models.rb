@@ -43,20 +43,22 @@ payments_sorted.all.first.values.methods.sort.each do |method_name|
   p method_name
 end
 
-p payments_sorted.class
-p payments_sorted
-p payments_sorted.first.class
-p payments_sorted.first
+# p payments_sorted.class
+# p payments_sorted
+# p payments_sorted.first.class
+# p payments_sorted.first
 
-p payments_sorted.first.recipient_id
+# p payments_sorted.first.recipient_id
 
-p payments_sorted.first.columns
+# p payments_sorted.first.columns
 # p payments_sorted.first.values.merge({:newKey => "newValue"})
-
+# payments_sorted.first.values[:newKey1] = "newValue"
 # payments_sorted.insert(:amount_euro=>"5")
 # payments_sorted.update(:amount_euro=>"6")
 
-p payments_sorted.first
+# p payments_sorted.first
+
+payments_sorted.first.total_payments
 
 
 
