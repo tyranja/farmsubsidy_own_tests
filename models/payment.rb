@@ -23,8 +23,5 @@ class Payment < Sequel::Model;
     p "For adding up all payments the Computer needs #{Time.now - beginning} seconds"
   end
 
-  def total_payments_of_one_reciepient
-  end
-
 end
 
