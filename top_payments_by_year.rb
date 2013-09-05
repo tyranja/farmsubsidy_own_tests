@@ -19,13 +19,13 @@ year_id = DB[:years].where(year: year_selection.to_i).first[:id]
 
 # find payments by year, order them by amount, and return the first 20
 payments_sorted = DB[:payments].where(year_id: year_id).
-																reverse_order(:amount_euro).
-																limit(20)
+                                reverse_order(:amount_euro).
+                                limit(20)
 
 # find recipient name, create an index, shove it into top_payments hash
 payments_sorted.each_with_index do |payment, index|
-	recipient_name = DB[:recipients].where(id: payment[:recipient_id]).first[:name].gsub("\"", "")
-	top_payments << {rank: index+1, name: recipient_name, amount: payment[:amount_euro]}
+  recipient_name = DB[:recipients].where(id: payment[:recipient_id]).first[:name].gsub("\"", "")
+  top_payments << {rank: index+1, name: recipient_name, amount: payment[:amount_euro]}
 end
 
 # [{:rank=>1, :name=>"Zemědělsko-obchodní družstvo Žichlínek", :amount=>#<BigDecimal:2cf64b0,'0.62048908E6',18(18)>}, {..}
