@@ -1,7 +1,7 @@
 require 'csv'
 require 'rubygems'
 require 'sequel'
-
+#
 
 # connect to an in-memory database
 DB = Sequel.postgres("farmsubsidy_performance")
