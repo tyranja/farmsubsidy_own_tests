@@ -30,7 +30,7 @@
 
       color.domain([
         d3.min(data, function(d){ return d.amount }),
-        d3.max(data, function(d){ return d.amount })
+        d3.max(data, function(d){ return d.amount * 0.1 })
         ])
 
       chart.selectAll("div")

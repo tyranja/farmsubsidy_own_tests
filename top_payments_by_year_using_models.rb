@@ -63,7 +63,7 @@ p payments_sorted.first
 p payments_sorted.all
 #[#<Payment @values={:id=>6113, :amount_euro=>#<BigDecimal:2e36fa0,'0.5155196E6',18(18)>, :recipient_id=>13183, :year_id=>7}>, ..]
 
-payments_sorted.all.total_payments
+#payments_sorted.all.total_payments
 # p payments_sorted.all.count
 
 
