@@ -27,5 +27,11 @@ CSV.open("top_payments.csv", "w", :force_quotes => true) do |csv|
   end
 end
 
-puts "our results are: "
-system("cat top_payments.csv")
+# puts "our results are: "
+# system("cat top_payments.csv")
+
+recipient_id = 2337
+recipient = Recipient[:id=> recipient_id]
+
+puts "total amount of payment from one recipient with id #{recipient_id}:"
+puts recipient.total_payment_amount
