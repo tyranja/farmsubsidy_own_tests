@@ -51,19 +51,36 @@ end
 # p payments_sorted.first.recipient_id
 
 # p payments_sorted.first.columns
-p payments_sorted.first.values[:amount_euro]
+# p payments_sorted.first.values[:amount_euro]
 # p payments_sorted.first.values.merge({:newKey => "newValue"})
 # payments_sorted.first.values[:newKey1] = "newValue"
 # payments_sorted.insert(:amount_euro=>"5")
 # payments_sorted.update(:amount_euro=>"6")
 
-p payments_sorted.first
+# p payments_sorted.first
 # <Payment @values={:id=>519, :amount_euro=>#<BigDecimal:1e5fc80,'0.6E1',9(18)>, :recipient_id=>25482, :year_id=>8}>
 
-p payments_sorted.all
+# p payments_sorted.all
 #[#<Payment @values={:id=>6113, :amount_euro=>#<BigDecimal:2e36fa0,'0.5155196E6',18(18)>, :recipient_id=>13183, :year_id=>7}>, ..]
 
-payments_sorted.all.total_payments
+# payments_sorted.all.total_payments
 # p payments_sorted.all.count
 
+# p payments_sorted.all[1].values[:amount_euro].to_i
+# p payments_sorted.all.count
+
+# p "methods of class payment: #{Payment.methods}"
+# p "methods of object payments_sorted: #{payments_sorted.methods.count}"
+
+# p payments_sorted.first.values[:amount_euro].to_i
+# p payments_sorted.first.values[:amount_euro].to_i
+# payments_sorted.first.save
+# p payments_sorted.first
+
+
+# p "Payment associations: #{Payment.associations}."
+# p "Year associations: #{Year.associations}."
+# p "Recipient associations: #{Recipient.associations}."
+
+# p payments_sorted.first.values
 

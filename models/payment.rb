@@ -5,7 +5,7 @@ require 'sequel'
 DB = Sequel.postgres("farmsubsidy_performance")
 
 # Create a Payments model.
-class Payment < Sequel::Model; 
+class Payment < Sequel::Model
   many_to_one :recipients
 
   def total_payments
@@ -23,5 +23,11 @@ class Payment < Sequel::Model;
     p "For adding up all payments the Computer needs #{Time.now - beginning} seconds"
   end
 
+  def count_payments
+    p self.count
+  end
+
+  def x
+  end
 end
 

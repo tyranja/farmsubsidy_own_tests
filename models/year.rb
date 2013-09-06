@@ -5,8 +5,8 @@ require 'sequel'
 DB = Sequel.postgres("farmsubsidy_performance")
 
 # Create a Year model.
-class Year < Sequel::Model; 
-	one_to_many :recipients
+class Year < Sequel::Model
+  one_to_many :recipients
 end
 
 
