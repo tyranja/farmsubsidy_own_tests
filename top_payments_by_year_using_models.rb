@@ -29,4 +29,3 @@ end
 
 puts "our results are: "
 system("cat top_payments.csv")
-
