@@ -19,7 +19,7 @@ class Payment < Sequel::Model;
       total_sum += Payment.all[i].amount_euro.to_i
       i += 1
     end
-    p "total sum:  #{total_sum.to_i}"
+    p "total sum: #{total_sum.to_i}"
     p "For adding up all payments the Computer needs #{Time.now - beginning} seconds"
   end
 
