@@ -4,7 +4,7 @@ require 'sequel'
 #
 
 # connect to an in-memory database
-DB = Sequel.postgres("farmsubsidy_performance")
+DB = Sequel.postgres("farmsubsidy_performance_add_top_payments")
 
 
 # create a dataset from the recipient data
