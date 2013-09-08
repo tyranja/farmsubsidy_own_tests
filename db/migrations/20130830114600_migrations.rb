@@ -42,20 +42,20 @@ Sequel.migration do
 
     create_table(:payments_total) do
       primary_key :id
-      BigDecimal :amount_euro_2000, :null=>false
-      BigDecimal :amount_euro_2001, :null=>false
-      BigDecimal :amount_euro_2002, :null=>false
-      BigDecimal :amount_euro_2003, :null=>false
-      BigDecimal :amount_euro_2004, :null=>false
-      BigDecimal :amount_euro_2005, :null=>false
-      BigDecimal :amount_euro_2006, :null=>false
-      BigDecimal :amount_euro_2007, :null=>false
-      BigDecimal :amount_euro_2008, :null=>false
-      BigDecimal :amount_euro_2009, :null=>false
-      BigDecimal :amount_euro_2010, :null=>false
-      BigDecimal :amount_euro_2011, :null=>false
-      BigDecimal :amount_euro_2012, :null=>false
-      BigDecimal :amount_euro_2013, :null=>false
+      BigDecimal :amount_euro_2000
+      BigDecimal :amount_euro_2001
+      BigDecimal :amount_euro_2002
+      BigDecimal :amount_euro_2003
+      BigDecimal :amount_euro_2004
+      BigDecimal :amount_euro_2005
+      BigDecimal :amount_euro_2006
+      BigDecimal :amount_euro_2007
+      BigDecimal :amount_euro_2008
+      BigDecimal :amount_euro_2009
+      BigDecimal :amount_euro_2010
+      BigDecimal :amount_euro_2011
+      BigDecimal :amount_euro_2012
+      BigDecimal :amount_euro_2013
       foreign_key(:recipient_id, :recipients)
     end
   end
