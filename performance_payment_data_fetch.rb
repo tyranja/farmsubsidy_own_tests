@@ -4,7 +4,7 @@ require 'sequel'
 
 beginning = Time.now
 
-MAXIMUMROWS = 10000
+MAXIMUMROWS = 500000
 # connect to an in-memory database
 DB = Sequel.postgres("farmsubsidy_performance_add_top_payments")
 
@@ -32,11 +32,11 @@ payment_txt = CSV.open("data/cz_payment.txt", "r:UTF-8", :headers => true, :col_
 
       # find the recipient_id by searching recipient dataset
       recipient_id = recipients.where(:global_recipient_id=>row['globalRecipientId']).first[:id]
-
+      year_id      = years_hash[row['year']]
       # insert data into payments table
       payment.insert(
         amount_euro: row['amountEuro'],
-        year_id: years_hash[row['year']],
+        year_id: year_id,
         recipient_id: recipient_id
       )
     i += 1

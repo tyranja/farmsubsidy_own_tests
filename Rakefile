@@ -39,6 +39,7 @@ namespace :db do
     DB = Sequel.postgres("farmsubsidy_performance_add_top_payments")
     Sequel::Migrator.run(DB, './db/migrations', :use_transactions=>true)
   end
+
 end
 
 

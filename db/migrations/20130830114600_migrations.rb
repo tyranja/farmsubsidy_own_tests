@@ -39,25 +39,6 @@ Sequel.migration do
       foreign_key(:recipient_id, :recipients)
       foreign_key(:year_id, :years)
     end
-
-    create_table(:payments_total) do
-      primary_key :id
-      BigDecimal :amount_euro_2000
-      BigDecimal :amount_euro_2001
-      BigDecimal :amount_euro_2002
-      BigDecimal :amount_euro_2003
-      BigDecimal :amount_euro_2004
-      BigDecimal :amount_euro_2005
-      BigDecimal :amount_euro_2006
-      BigDecimal :amount_euro_2007
-      BigDecimal :amount_euro_2008
-      BigDecimal :amount_euro_2009
-      BigDecimal :amount_euro_2010
-      BigDecimal :amount_euro_2011
-      BigDecimal :amount_euro_2012
-      BigDecimal :amount_euro_2013
-      foreign_key(:recipient_id, :recipients)
-    end
   end
 
 end
