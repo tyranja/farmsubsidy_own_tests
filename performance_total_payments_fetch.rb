@@ -1,4 +1,3 @@
-require 'csv'
 require 'rubygems'
 require 'sequel'
 require 'logger'
