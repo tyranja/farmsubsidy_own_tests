@@ -35,3 +35,19 @@ end
 
 
 
+namespace :example do
+  desc "I am task one"
+  task :task_1 do
+     p "Hello"
+  end
+
+  desc "I am task two"
+  task task_2: :task_1 do
+     p "and goodbye"
+  end
+
+  desc "I am task three"
+  task task_3: [:task_2, :task_1] do
+     p "and goodbye 3"
+  end
+end
