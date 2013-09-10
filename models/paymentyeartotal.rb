@@ -1,8 +1,7 @@
 # Create a Total Payment model.
 class PaymentYearTotal < Sequel::Model
-  many_to_many :recipient
-  many_to_many :year
-  one_to_many :payments
+  many_to_one :recipient
+  many_to_one :year
 
   def number
     self.count

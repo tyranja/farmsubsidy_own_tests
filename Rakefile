@@ -47,7 +47,7 @@ namespace :example do
   end
 
   desc "I am task three"
-  task task_3: [:task_2, :task_1] do
+  task task_ubun3: [:task_2, :task_1] do
      p "and goodbye 3"
   end
 end
