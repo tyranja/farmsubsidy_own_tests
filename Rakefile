@@ -23,7 +23,7 @@ namespace :db do
     Sequel::Migrator.run(DB, './db/migrations', :use_transactions=>true)
   end
 
-  task :set_up_performance_test_db_add_top_payments do
+  task :run_any_new_migration do
     require "sequel"
     Sequel.extension :migration
 

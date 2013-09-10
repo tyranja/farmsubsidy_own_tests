@@ -16,7 +16,7 @@ total_payment = DB[:payment_year_totals]
 Recipient.all.each do |recipient|
   Year.all.each do |year|
     total = recipient.total_payment_amount_per_year(year.year)
-    if total > 0.0
+    if total != 0.0
       total_payment.insert(
         recipient_id: recipient.id,
         year_id: year.id,
